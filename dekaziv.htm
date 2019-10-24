@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0031)http://output.jsbin.com/dekaziv -->
-<html>
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!--
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
 Created using JS Bin
 http://jsbin.com
 
@@ -12,317 +9,253 @@ Copyright (c) 2019 by RonHuang17 (http://jsbin.com/dekaziv/103/edit)
 
 Released under the MIT license: http://jsbin.mit-license.org
 -->
-  <meta name="robots" content="noindex">
+<meta name="robots" content="noindex">
   <meta name="viewport" content="width=device-width">
   <link href="./dekaziv_files/css" rel="stylesheet">
 
-  <style id="jsbin-css">
-    body {
-      margin: auto;
-      background: #000000;
-    }
+<style id="jsbin-css">
+body{
+  margin: auto;
+  background: #000000;
+ }
 
-    h1 {
-      background: #00aaff;
-      color: #000000;
-      text-align: center;
-      padding: auto;
-      margin: auto auto;
-      font-family: 'Noto Sans TC', sans-serif;
-      border-radius: 2px;
-      font-size: 200%
-    }
+h1{
+  background: #00aaff;
+  color:  #000000;
+  text-align: center;
+  padding: auto;
+  margin: auto auto ; 
+  font-family: 'Noto Sans TC', sans-serif;
+  border-radius: 2px;
+  font-size:200%
+}
 
-    h2.hidden {
-      display: none;
-    }
-
-
-    .myrow {
-      text-align: center;
-      padding: 6px 6px;
-      font-family: 'Noto Sans TC', sans-serif;
-    }
+h2.hidden{
+   display: none;
+}
 
 
-    .item {
-      display: block;
-      color: #000000;
-      width: 1000px;
-      background: #ffffcc;
-      margin: 5px;
-      padding: 5px;
-      text-align: center;
-      border-radius: 8px;
-      font-size: 72px;
-      font-family: 'Noto Sans TC', sans-serif;
-    }
+.myrow{
+ text-align: center;
+ padding: 6px 6px;
+ font-family: 'Noto Sans TC', sans-serif; 
+}
 
-    .item2 {
-      display: block;
-      color: #000000;
-      width: 1000px;
-      background: #ffffcc;
-      margin: 5px;
-      padding: 5px;
-      text-align: center;
-      border-radius: 8px;
-      font-size: 72px;
-      font-family: 'Noto Sans TC', sans-serif;
-    }
 
-    .item3 {
-      display: inline-block;
-      color: #FFFFFF;
-      width: 35%;
-      background: #000000;
-      margin: 1%;
-      padding: 2%;
-      text-align: center;
-      border: 5px solid #595959;
-      border-radius: 8px;
-      font-size: 120%;
-      font-family: 'Noto Sans TC', sans-serif;
-      text-align: center;
-    }
+.item{
+  display: block;
+  color: #000000;
+  width: 1000px;
+  background: #ffffcc;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 72px;
+  font-family: 'Noto Sans TC', sans-serif;
+  }
 
-    .item4 {
-      display: inline-block;
-      color: #FFFFFF;
-      width: auto%;
-      background: #595959;
-      margin: 1%;
-      padding: 2%;
-      text-align: center;
-      border-radius: 8px;
-      font-size: 120%;
-      font-family: 'Noto Sans TC', sans-serif;
-      text-align: center;
-    }
+.item2{
+  display: block;
+  color: #000000;
+  width: 1000px;
+  background: #ffffcc;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 72px;
+  font-family: 'Noto Sans TC', sans-serif;
+  }
 
-    backg
-    }
-  </style>
+.item3{
+  display: inline-block;
+  color: #FFFFFF;
+  width: 35%;
+  background: #000000;
+  margin: 1%;
+  padding: 2%;
+  text-align: center;
+  border:5px solid #595959;
+  border-radius: 8px;
+  font-size: 120%;
+  font-family: 'Noto Sans TC', sans-serif; 
+  text-align: center;
+ }
+
+.item4{
+  display: inline-block;
+  color: #FFFFFF;
+  width: auto%;
+  background: #595959;
+  margin: 1%;
+  padding: 2%;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 120%;
+  font-family: 'Noto Sans TC', sans-serif;
+  text-align: center;  
+ }
+
+  backg
+}
+</style>
 </head>
-
 <body>
-  <script type="text/javascript" async="" src="./dekaziv_files/linkid.js.download"></script>
-  <script async="" src="./dekaziv_files/analytics.js.download"></script>
-  <script type="text/javascript">
-    var infoBox; // 訊息 label
-    var quizBox; // 題目單辭
-    var textBox; // 最終的辨識訊息 text input
-    var tempBox; // 中間的辨識訊息 text input
-    var startStopButton; // 「辨識/停止」按鈕
-    var final_transcript = ''; // 最終的辨識訊息的變數
-    var recognizing = false; // 是否辨識中
+<script type="text/javascript" async="" src="./dekaziv_files/linkid.js.download"></script><script async="" src="./dekaziv_files/analytics.js.download"></script><script type="text/javascript">
+var infoBox; // 訊息 label
+var quizBox; // 題目單辭
+var textBox; // 最終的辨識訊息 text input
+var tempBox; // 中間的辨識訊息 text input
+var startStopButton; // 「辨識/停止」按鈕
+var final_transcript = ''; // 最終的辨識訊息的變數
+var recognizing = false; // 是否辨識中
 
 
-    function startButton(event) {
-      if (!recognizing) {
-        var x = document.getElementById("myAudio");
-        x.play();
-      }
+function startButton(event) {
+  var x = document.getElementById("myAudio"); 
+  x.play();
 
-      infoBox = document.getElementById("infoBox"); // 取得訊息控制項 infoBox
-      quizBox = document.getElementById("quizBox").innerHTML = '台商小镇'; // 
-      textBox = document.getElementById("textBox"); // 取得最終的辨識訊息控制項 textBox
-      tempBox = document.getElementById("tempBox"); // 取得中間的辨識訊息控制項 tempBox
-      startStopButton = document.getElementById("startStopButton"); // 取得「辨識/停止」這個按鈕控制項
-      //langCombo = document.getElementById("langCombo"); // 取得「辨識語言」這個選擇控制項
-      Math.floor(Math.random() * 3);
+  infoBox = document.getElementById("infoBox"); // 取得訊息控制項 infoBox
+  quizBox = document.getElementById("quizBox").innerHTML = '台商小镇'; // 
+  textBox = document.getElementById("textBox"); // 取得最終的辨識訊息控制項 textBox
+  tempBox = document.getElementById("tempBox"); // 取得中間的辨識訊息控制項 tempBox
+  startStopButton = document.getElementById("startStopButton"); // 取得「辨識/停止」這個按鈕控制項
+  //langCombo = document.getElementById("langCombo"); // 取得「辨識語言」這個選擇控制項
+  Math.floor(Math.random() * 3); 
+  
+  if (recognizing) { // 如果正在辨識，則停止。
+   recognition.stop();
+  } else { // 否則就開始辨識
+    textBox.value = ''; // 清除最終的辨識訊息
+    tempBox.value = ''; // 清除中間的辨識訊息
+    final_transcript = ''; // 最終的辨識訊息變數
+    recognition.lang = "cmn-Hant-TW"; // 設定辨識語言
+    recognition.start(); // 開始辨識
+  }
+}
 
-      if (recognizing) { // 如果正在辨識，則停止。
-        recognition.stop();
-      } else { // 否則就開始辨識
-        textBox.value = ''; // 清除最終的辨識訊息
-        tempBox.value = ''; // 清除中間的辨識訊息
-        final_transcript = ''; // 最終的辨識訊息變數
-        recognition.lang = "cmn-Hant-TW"; // 設定辨識語言
-        recognition.start(); // 開始辨識
+if (!('webkitSpeechRecognition' in window)) {  // 如果找不到 window.webkitSpeechRecognition 這個屬性
+  // 就是不支援語音辨識，要求使用者更新瀏覽器。 
+  infoBox.innerText = "本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)";
+} else {
+  var recognition = new webkitSpeechRecognition(); // 建立語音辨識物件 webkitSpeechRecognition
+  recognition.continuous = true; // 設定連續辨識模式
+  recognition.interimResults = true; // 設定輸出中先結果。
+
+  recognition.onstart = function() { // 開始辨識
+    recognizing = true; // 設定為辨識中
+    startStopButton.value = "我已念完"; // 辨識中...按鈕改為「按此停止」。  
+    infoBox.innerText = "辨識中...";  // 顯示訊息為「辨識中」...
+  };
+
+  recognition.onend = function() { // 辨識完成
+    recognizing = false; // 設定為「非辨識中」
+    startStopButton.value = "開始練習";  // 辨識完成...按鈕改為「開始辨識」。
+    infoBox.innerText = ""; // 不顯示訊息
+  };
+
+  recognition.onresult = function(event) { // 辨識有任何結果時
+    var interim_transcript = ''; // 中間結果
+    for (var i = event.resultIndex; i < event.results.length; ++i) { // 對於每一個辨識結果
+      if (event.results[i].isFinal) { // 如果是最終結果
+        final_transcript += event.results[i][0].transcript; // 將其加入最終結果中
+      } else { // 否則
+        interim_transcript += event.results[i][0].transcript; // 將其加入中間結果中
       }
     }
-
-    if (!('webkitSpeechRecognition' in window)) { // 如果找不到 window.webkitSpeechRecognition 這個屬性
-      // 就是不支援語音辨識，要求使用者更新瀏覽器。 
-      infoBox.innerText = "本瀏覽器不支援語音辨識，請更換瀏覽器！(Chrome 25 版以上才支援語音辨識)";
-    } else {
-      var recognition = new webkitSpeechRecognition(); // 建立語音辨識物件 webkitSpeechRecognition
-      recognition.continuous = true; // 設定連續辨識模式
-      recognition.interimResults = true; // 設定輸出中先結果。
-
-      recognition.onstart = function () { // 開始辨識
-        recognizing = true; // 設定為辨識中
-        startStopButton.value = "我已念完"; // 辨識中...按鈕改為「按此停止」。  
-        infoBox.innerText = "辨識中..."; // 顯示訊息為「辨識中」...
-      };
-
-      recognition.onend = function () { // 辨識完成
-        recognizing = false; // 設定為「非辨識中」
-        startStopButton.value = "開始練習"; // 辨識完成...按鈕改為「開始辨識」。
-        infoBox.innerText = ""; // 不顯示訊息
-      };
-
-      recognition.onresult = function (event) { // 辨識有任何結果時
-        var interim_transcript = ''; // 中間結果
-        for (var i = event.resultIndex; i < event.results.length; ++i) { // 對於每一個辨識結果
-          if (event.results[i].isFinal) { // 如果是最終結果
-            final_transcript += event.results[i][0].transcript; // 將其加入最終結果中
-          } else { // 否則
-            interim_transcript += event.results[i][0].transcript; // 將其加入中間結果中
-          }
-        }
-        if (final_transcript.trim().length > 0) // 如果有最終辨識文字
-
-          //這邊開始處理變色
-
-          //測試變色
-          var mystr = final_transcript; //假設辨識出來的文字是這個
-        var resArray = new Array(); //準備陣列
-        resArray = mystr.split(""); //將字串分解成單一自元，存到 resArray裡面
-
-        if (resArray[0] == '台') {
-          str0 = resArray[0].fontcolor("black");
-        } else {
-          str0 = resArray[0].fontcolor("red");
-        }
-
-        if (resArray[1] == '商') {
-          str1 = resArray[1].fontcolor("black");
-        } else {
-          str1 = resArray[1].fontcolor("red");
-        }
-
-        if (resArray[2] == '小') {
-          str2 = resArray[2].fontcolor("black");
-        } else {
-          str2 = resArray[2].fontcolor("red");
-        }
-
-        if (resArray[3] == '鎮') {
-          str3 = resArray[3].fontcolor("black");
-        } else {
-          str3 = resArray[3].fontcolor("red");
-        }
-
-
-        //quizBox = document.getElementById("quizBox").innerHTML = str0.concat(str1, str2, str3);
-
-
-
-
-
-
-        //測試結束
-
-        //textBox.value = str0.concat(str1, str2, str3); // 顯示最終辨識文字
-        //textBox = document.getElementById("textBox").innerHTML = str0.concat(str1, st2, str3);
+    if (final_transcript.trim().length > 0) // 如果有最終辨識文字
         textBox.value = final_transcript; // 顯示最終辨識文字
+    if (interim_transcript.trim().length > 0) // 如果有中間辨識文字
+        tempBox.value = interim_transcript; // 顯示中間辨識文字
+  };
+}
+  $(function(){
+  if ('speechSynthesis' in window) {
+    speechSynthesis.onvoiceschanged = function() {
+      var $voicelist = $('#voices');
 
-        if (interim_transcript.trim().length > 0) // 如果有中間辨識文字
-          tempBox.value = interim_transcript; // 顯示中間辨識文字
-      };
-    }
-    $(function () {
-      if ('speechSynthesis' in window) {
-        speechSynthesis.onvoiceschanged = function () {
-          var $voicelist = $('#voices');
+      if($voicelist.find('option').length == 0) {
+        speechSynthesis.getVoices().forEach(function(voice, index) {
+          var $option = $('<option>')
+          .val(index)
+          .html(voice.name + (voice.default ? ' (default)' :''));
 
-          if ($voicelist.find('option').length == 0) {
-            speechSynthesis.getVoices().forEach(function (voice, index) {
-              var $option = $('<option>')
-                .val(index)
-                .html(voice.name + (voice.default ? ' (default)' : ''));
+          $voicelist.append($option);
+        });
 
-              $voicelist.append($option);
-            });
-
-            $voicelist.material_select();
-          }
-        }
-
-        $('#speak').click(function () {
-          var text = $('#message').val();
-          var msg = new SpeechSynthesisUtterance();
-          var voices = window.speechSynthesis.getVoices();
-          msg.voice = voices[$('#voices').val()];
-          msg.rate = $('#rate').val() / 10;
-          msg.pitch = $('#pitch').val();
-          msg.text = text;
-
-          msg.onend = function (e) {
-            console.log('Finished in ' + event.elapsedTime + ' seconds.');
-          };
-
-          speechSynthesis.speak(msg);
-        })
-      } else {
-        $('#modal1').openModal();
+        $voicelist.material_select();
       }
-    });
-  </script>
-  <h1>口說訓練系統</h1>
+    }
+
+    $('#speak').click(function(){
+      var text = $('#message').val();
+      var msg = new SpeechSynthesisUtterance();
+      var voices = window.speechSynthesis.getVoices();
+      msg.voice = voices[$('#voices').val()];
+      msg.rate = $('#rate').val() / 10;
+      msg.pitch = $('#pitch').val();
+      msg.text = text;
+
+      msg.onend = function(e) {
+        console.log('Finished in ' + event.elapsedTime + ' seconds.');
+      };
+
+      speechSynthesis.speak(msg);
+    })
+  } else {
+    $('#modal1').openModal();
+  }
+});
+  
+</script>   
+<h1>口說訓練系統</h1>
+
+<div class="myrow">
+  <div class="item" id="quizBox" value="">台商小镇</div>
+</div>
+<div class="myrow">
+  <input class="item2" id="tempBox" type="text" value=""><br>
+</div>
 
   <div class="myrow">
-    <div class="item" id="quizBox" value="">台商小镇</div>
-  </div>
-  <div class="myrow">
-    <input class="item2" id="tempBox" type="text" value=""><br>
-  </div>
+<input class="item4" id="startStopButton" type="button" value="開始練習" onclick="startButton(event)">
 
-  <div class="myrow">
-    <input class="item4" id="startStopButton" type="button" value="開始練習" onclick="startButton(event)">
+<!--=======================================-->
 
-    <!--=======================================-->
+<audio id="myAudio">
+  <source src="voice-taiwan.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
-    <audio id="myAudio">
-      <source src="voice-taiwan.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-
-    <!--=======================================-->
+<!--=======================================-->
 
 
 
 
 
-    <input class="item4" id="Button" type="button" value="再念一次" onclick="startButton(event)">
-    <input class="item4" id="Button" type="button" value="跳下一提" onclick="startButton(event)">
-    <input class="item4" id="Button" type="button" value="結束練習" onclick="startButton(event)">
-  </div>
-  <h2 class="hidden"><input class="item2" id="textBox" type="text" value=""></h2>
+<input class="item4" id="Button" type="button" value="再念一次" onclick="startButton(event)">
+<input class="item4" id="Button" type="button" value="跳下一提" onclick="startButton(event)">
+<input class="item4" id="Button" type="button" value="結束練習" onclick="startButton(event)">
+</div>
+<h2 class="hidden"><input class="item2" id="textBox" type="text" value=""></h2>
 
-  <label id="infoBox"></label>
+<label id="infoBox"></label>
+  
+<script src="./dekaziv_files/edit.js.download"></script>
+<script>jsbinShowEdit && jsbinShowEdit({"static":"http://static.jsbin.com","root":"http://jsbin.com"});</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  <script src="./dekaziv_files/edit.js.download"></script>
-  <script>
-    jsbinShowEdit && jsbinShowEdit({
-      "static": "http://static.jsbin.com",
-      "root": "http://jsbin.com"
-    });
-  </script>
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-1656750-34', 'auto');
+ga('require', 'linkid', 'linkid.js');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
 
-    ga('create', 'UA-1656750-34', 'auto');
-    ga('require', 'linkid', 'linkid.js');
-    ga('require', 'displayfeatures');
-    ga('send', 'pageview');
-  </script>
+</script>
 
 
-</body><a id="edit-with-js-bin" href="http://jsbin.com/dekaziv/edit" style="top: -60px;">Edit in JS Bin <img
-    src="./dekaziv_files/favicon.png" width="16" height="16"></a>
-<link rel="stylesheet" href="./dekaziv_files/edit.css">
-
-</html>
+</body><a id="edit-with-js-bin" href="http://jsbin.com/dekaziv/edit" style="top: -60px;">Edit in JS Bin <img src="./dekaziv_files/favicon.png" width="16" height="16"></a><link rel="stylesheet" href="./dekaziv_files/edit.css"></html>
