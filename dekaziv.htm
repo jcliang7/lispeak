@@ -113,19 +113,22 @@ Released under the MIT license: http://jsbin.mit-license.org
     var startStopButton; // 「辨識/停止」按鈕
     var final_transcript = ''; // 最終的辨識訊息的變數
     var recognizing = false; // 是否辨識中 
-    var quizStr = ['第零個題目', '建國科技大學', '我是第一名', '四十四隻石獅子', '中原大學', '台商小鎮'];//裝題目的陣列
+    var quizStr = ['第零個題目', '建國科技大學', '我愛媽媽', '肚子餓', '吃飯', '喝水'];//裝題目的陣列
+    var quizVoice = ['None', 'voice01.mp3', 'voice02.mp3', 'voice03.mp3', 'voice04.mp3', 'voice05.mp3'];
     var quizNum = 1;//現在第幾題
 
 
     function speakQuiz(text) {
       console.log("Text = " + text);
-      var msg = new SpeechSynthesisUtterance();
+      var x = new Audio(quizVoice[quizNum]);
+      x.play();
+      /*var msg = new SpeechSynthesisUtterance();
       var voices = window.speechSynthesis.getVoices();
       msg.voice = voices[18];//Google 國語（臺灣）
       msg.rate = 1;
       msg.pitch = 1;
       msg.text = text;
-      speechSynthesis.speak(msg);
+      speechSynthesis.speak(msg);*/
     }
     function startButton(event) {
       // var x = document.getElementById("myAudio");
@@ -190,9 +193,16 @@ Released under the MIT license: http://jsbin.mit-license.org
     }
 
     function nextButton(event) {
-      quizNum = (quizNum + 1) % 5 + 1;
-
+      console.log(quizStr.length)
+      quizNum = quizNum % (quizStr.length - 1) + 1;
+      if (recognizing) {
+       recognition.stop();
+        //recognizing = false;
+      }
       startButton(event);
+      textBox.value = ''; // 清除最終的辨識訊息
+        tempBox.value = ''; // 清除中間的辨識訊息
+        final_transcript = ''; // 最終的辨識訊息變數
     }
 
     function endButton(event) {
